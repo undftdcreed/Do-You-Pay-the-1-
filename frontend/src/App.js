@@ -16,6 +16,7 @@ function App() {
       <Route path="/cards" element= {<CardList />} />
       <Route path="/cards/:id" element= {<CardDetails />} />
      </Routes>
+     <Footer />
     </div>
   );
 }
