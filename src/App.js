@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import CardDetails from "./pages/CardDetails";
-import CardList from "./pages/Cardlist";
+import CardList from "./pages/CardIndex";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -13,7 +13,7 @@ function App() {
   const [cards, setCards] = useState([]);
 
     const fetchData = async () => {
-        const URL = "https://api.magicthegathering.io/v1/cards"
+        const URL = "https://project-3-backend-rzmh.onrender.com/cards"
         try {
             const response = await fetch(URL);
             const cardData = await response.json();
@@ -33,12 +33,13 @@ useEffect(() => {
   return (
     <div className="App">
      <Header />
+     <main>
      <Routes>
       <Route path="/" element={ <Home />} />
       <Route path="/cards" element= { <CardList cards={cards} setCards={setCards}/>} />
       <Route path="/cards/:id" element= { <CardDetails />} />
      </Routes>
-     
+     </main>
      <Footer />
     </div>
   );

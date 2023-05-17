@@ -4,7 +4,7 @@ import React from "react";
 function Header(props) {
     return (
         <header>
-            <h1>magicthegathering deck builder</h1>
+            <h1>magicthegathering vending machine</h1>
             <nav>
                 <ul>
                 <Link to="/">Home</Link>           
