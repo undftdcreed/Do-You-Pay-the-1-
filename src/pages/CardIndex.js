@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+
 const CardIndex = () => {
   const [cards, setCards] = useState([]);
   const [page, setPage] = useState(1);
@@ -6,6 +9,8 @@ const CardIndex = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCard, setSelectedCard] = useState(null);
   const pageSize = 20; // Number of cards to fetch per page
+
+  
   useEffect(() => {
     const fetchCards = async () => {
       try {
@@ -19,16 +24,16 @@ const CardIndex = () => {
     };
     fetchCards();
   }, [page, searchQuery]);
-  const handleNextPage = () => {
-    if (hasMore) {
-      setPage((prevPage) => prevPage + 1);
-    }
-  };
-  const handlePrevPage = () => {
-    if (page > 1) {
-      setPage((prevPage) => prevPage - 1);
-    }
-  };
+  // const handleNextPage = () => {
+  //   if (hasMore) {
+  //     setPage((prevPage) => prevPage + 1);
+  //   }
+  // };
+  // const handlePrevPage = () => {
+  //   if (page > 1) {
+  //     setPage((prevPage) => prevPage - 1);
+  //   }
+  // };
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -50,18 +55,18 @@ const CardIndex = () => {
         <button type="submit">Search</button>
       </form>
       
-      <div>
+      {/* <div>
         <button onClick={handlePrevPage} disabled={page === 1}>
           Previous Page
         </button>
         <button onClick={handleNextPage} disabled={!hasMore}>
           Next Page
         </button>
-      </div>
+      </div> */}
       
         {cards.map((card) => (
           <li key={card.id} onClick={() => handleCardClick(card)}>
-            {card.name}
+            <Link to={`/cards/${card.id}`}>{card.name}</Link>
           </li>
         ))}
      {selectedCard && (
