@@ -7,6 +7,8 @@ import CardDetails from "./pages/CardDetails";
 import CardList from "./pages/CardIndex";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import DeckCreation from "./pages/DeckCreation";
+
 
 function App() {
 
@@ -38,6 +40,7 @@ useEffect(() => {
       <Route path="/" element={ <Home />} />
       <Route path="/cards" element= { <CardList cards={cards} setCards={setCards}/>} />
       <Route path="/cards/:id" element= { <CardDetails />} />
+      <Route path="/create" element= { <DeckCreation />} />
      </Routes>
      </main>
      <Footer />

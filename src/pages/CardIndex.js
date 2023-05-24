@@ -10,7 +10,7 @@ const CardIndex = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const pageSize = 20; // Number of cards to fetch per page
 
-  
+
   useEffect(() => {
     const fetchCards = async () => {
       try {
