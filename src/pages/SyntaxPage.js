@@ -59,13 +59,14 @@ const SyntaxPage = () => {
   ];
 
   return (
-    <div>
+   
+      <div className="syntax-grid">
       <h2>Syntax Rules</h2>
       {SyntaxRules.map((rule, index) => (
-        <div key={index}>
+        <div className="syntax-card" key={index}>
           <h3>{rule.rule}</h3>
           <p>{rule.description}</p>
-    </div>
+          </div>
       ))}
       </div>
   );
