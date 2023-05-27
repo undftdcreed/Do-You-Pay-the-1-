@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CardIndex from './Home';
+import CardIndex from './SyntaxPage';
 const DeckCreation = () => {
   const [decks, setDecks] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null); 

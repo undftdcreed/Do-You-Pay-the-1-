@@ -2,12 +2,12 @@ import "./index.css"
 import './App.css';
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import CardDetails from "./pages/CardDetails";
 import CardList from "./pages/CardIndex";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import DeckCreation from "./pages/DeckCreation";
+import SyntaxPage from "./pages/SyntaxPage";
 
 
 function App() {
@@ -37,7 +37,7 @@ useEffect(() => {
      <Header />
      <main>
      <Routes>
-      <Route path="/" element={ <Home />} />
+      <Route path="/" element={ <SyntaxPage />} />
       <Route path="/cards" element= { <CardList cards={cards} setCards={setCards}/>} />
       <Route path="/cards/:id" element= { <CardDetails />} />
       <Route path="/create" element= { <DeckCreation />} />
