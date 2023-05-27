@@ -35,14 +35,14 @@ useEffect(() => {
   return (
     <div className="App">
      <Header />
-     <main>
+    
      <Routes>
       <Route path="/" element={ <SyntaxPage />} />
       <Route path="/cards" element= { <CardList cards={cards} setCards={setCards}/>} />
       <Route path="/cards/:id" element= { <CardDetails />} />
       <Route path="/create" element= { <DeckCreation />} />
      </Routes>
-     </main>
+     
      <Footer />
     </div>
   );
