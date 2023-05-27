@@ -25,7 +25,7 @@ const CardShow = ({ match }) => {
       <h1>{card.name}</h1>
       <img src={card.image_uris.normal} alt={card.name} />
       <p>{card.oracle_text}</p>
-      {/* Additional card details */}
+      
     </div>
   );
 };
