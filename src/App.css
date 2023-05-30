@@ -28,14 +28,7 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 
 .syntax-grid{
@@ -69,19 +62,3 @@
   color: #555;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotateY(0deg);
-  }
-  20% {
-    transform: rotateY(360deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-.interactive-header h1 {
-  front-size: 24px;
-  margin-bottom: 10px;
-}
