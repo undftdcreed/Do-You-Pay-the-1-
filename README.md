@@ -1,4 +1,5 @@
-# Project-3-Frontend
+# Project-3-Frontend - "DO YOU PAY THE ONE?"
+https://doyoupaytheone.netlify.app/cards
 
 Magic The Gathering Deck/list creator
 problem i want to solve- I want to catalogue and create decklists or be able to look up cards and see price lists
