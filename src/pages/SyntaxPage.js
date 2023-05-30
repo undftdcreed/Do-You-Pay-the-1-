@@ -62,6 +62,7 @@ const SyntaxPage = () => {
    
       <div className="syntax-grid">
       <h2>Syntax Rules</h2>
+      <h3>Hello!! Welcome to "DO YOU PAY THE ONE?" ! Below are the search parameters so you can easily look for the certain cards through our card list page! Thank you for visiting the site!</h3>
       {SyntaxRules.map((rule, index) => (
         <div className="syntax-card" key={index}>
           <h3>{rule.rule}</h3>
