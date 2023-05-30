@@ -42,6 +42,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minimax(200px, 1fr));
   gap: 20px;
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 .syntax-card{
@@ -65,4 +67,21 @@
 .syntax-card p {
   font-size: 14px;
   color: #555;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  20% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.interactive-header h1 {
+  front-size: 24px;
+  margin-bottom: 10px;
 }

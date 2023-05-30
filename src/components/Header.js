@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Home from "../pages/SyntaxPage";
+
 
 
 
@@ -16,7 +16,7 @@ function Header(props) {
 
 
     return (
-        <header>
+        <header className="interactive-header">
             <h1>Magic Life on Deck </h1>
             <nav style={navStyle}>
                 <Link to={"/"}>
