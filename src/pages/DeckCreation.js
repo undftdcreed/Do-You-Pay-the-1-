@@ -1,81 +1,38 @@
 import React, { useState } from 'react';
-import CardIndex from './SyntaxPage';
-const DeckCreation = () => {
-  const [decks, setDecks] = useState([]);
-  const [selectedCard, setSelectedCard] = useState(null); 
+import CardIndex from './CardIndex';
 
 
-  const createDeck = () => {
-    // Create a new deck
-    const newDeck = {
-      id: Date.now(), // Generate a unique ID for the deck
-      cards: [],
-    };
+const CardDeckBuilder = () => {
+  const [deck, setDeck] = useState([]);
+  
 
-
-    setDecks((prevDecks) => [...prevDecks, newDeck]);
+  
+  const addCardToDeck = (card) => {
+    setDeck([...deck, card]);
   };
-
-
-  const addToDeck = (deckId) => {
-    // Find the selected deck
-    const selectedDeck = decks.find((deck) => deck.id === deckId);
-    if (selectedDeck && selectedCard) {
-      // Add the selected card to the deck
-      const updatedDeck = {
-        ...selectedDeck,
-        cards: [...selectedDeck.cards, selectedCard],
-      };
-      // Update the decks array
-      setDecks((prevDecks) => {
-        const updatedDecks = prevDecks.map((deck) =>
-          deck.id === deckId ? updatedDeck : deck
-        );
-        return updatedDecks;
-      });
-      // Clear the selected card
-      setSelectedCard(null);
-    }
-  };
-
 
   return (
     <div>
-      <h1>Deck Creation</h1>
-      <button onClick={createDeck}>Create New Deck</button>
+      <h2>Card Deck Builder</h2>
       <div>
-        <h2>Card Index</h2>
-        <CardIndex selectedCard={setSelectedCard} />
-      </div>
-      <div>
-        <h2>Selected Card</h2>
-        {selectedCard && (
-          <div>
-            <img src={selectedCard.image_uris.normal} alt={selectedCard.name} />
-            <h3>{selectedCard.name}</h3>
-            {decks.map((deck) => (
-              <button key={deck.id} onClick={() => addToDeck(deck.id)}>
-                Add to Deck {deck.id}
-              </button>
+        <h3>Deck:</h3>
+        {deck.length === 0 ? (
+          <p>No cards in the deck.</p>
+        ) : (
+          <ul>
+            {deck.map((card, index) => (
+              <li key={index}>{card.name}</li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
       <div>
-        <h2>Decks</h2>
-        {decks.map((deck) => (
-          <div key={deck.id}>
-            <h3>Deck {deck.id}</h3>
-            {deck.cards.map((card) => (
-              <div key={card.id}>
-                <img src={card.image_uris.normal} alt={card.name} />
-                <h3>{card.name}</h3>
-              </div>
-            ))}
-          </div>
-        ))}
+        <CardIndex onCardSelect={addCardToDeck}/>
+        
       </div>
     </div>
   );
 };
-export default DeckCreation;
+
+
+export default CardDeckBuilder;

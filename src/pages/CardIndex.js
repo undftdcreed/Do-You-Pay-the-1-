@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 const CardIndex = () => {
   const [cards, setCards] = useState([]);
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
+  const [, setHasMore] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCard, setSelectedCard] = useState(null);
   const pageSize = 20; // Number of cards to fetch per page
+  
+
 
 
   useEffect(() => {
@@ -24,16 +26,7 @@ const CardIndex = () => {
     };
     fetchCards();
   }, [page, searchQuery]);
-  // const handleNextPage = () => {
-  //   if (hasMore) {
-  //     setPage((prevPage) => prevPage + 1);
-  //   }
-  // };
-  // const handlePrevPage = () => {
-  //   if (page > 1) {
-  //     setPage((prevPage) => prevPage - 1);
-  //   }
-  // };
+  
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -67,6 +60,7 @@ const CardIndex = () => {
         {cards.map((card) => (
           <li key={card.id} onClick={() => handleCardClick(card)}>
             <Link to={`/cards/${card.id}`}>{card.name}</Link>
+            
           </li>
         ))}
      {selectedCard && (

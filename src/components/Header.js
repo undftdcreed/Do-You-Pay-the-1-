@@ -23,7 +23,7 @@ function Header(props) {
 
     return (
         <header className="interactive-header">
-            <h1>Magic Life on Deck </h1>
+            <h1>PaytheOne? </h1>
             <nav ref={navRef} style={navStyle}>
                 
                 <Link to={"/"}>
