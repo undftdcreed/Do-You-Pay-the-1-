@@ -12,15 +12,20 @@ User Stories-
 
 Technologies Used
 -----------------------------------------
-React Vanilla CSS TailwindCSS JSX // Netlify For Hosting
+React Vanilla CSS TailwindCSS JSX // Netlify For Hosting //
+
+API USED
+-----------------------------------------
+scryfall api 
+https://scryfall.com/docs/api
 
 WireFrame
 ----------------------------------------
 Card Details Component Card Component Add Cards to decklist Delete Cards to deck list
 
-IceBox
+IceBox - stretch features
 ----------------------------------------
-stretch features - user authentication
+user authentication, deck building, page for judge rulings, life counters, 
 
 Backend Repo Link
 ---------------------------------------
